@@ -1,72 +1,159 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>catholicza</title>
+  <title>Southern African Bible Readings for the Catholic Mass</title>
  
-  
   <!-- Move the meta tag with the CSP directive inside the head section -->
-  <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline' 'unsafe-eval' 'self' *.bible.com *.youversion.com *.youversionapi.com *.youversionapistaging.com *.branch.io *.google.com *.google-analytics.com *.sharethis.com *.share-this.com *.typekit.net *.hotjar.com app.link.com *.googletagmanager.com *.polyfill.io cdn.ravenjs.com *.googleapis.com app.link https://js-agent.newrelic.com; img-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'self' https://www.bible.com;">
-  <!-- Add the origin 'https://js-agent.newrelic.com' to the script-src directive -->
-  <!-- Remove the hash value for the script 'https://js-agent.newrelic.com/nr-spa-1.250.0.min.js' -->
-  <!-- Remove the nonce value for the script 'https://js-agent.newrelic.com/nr-spa-1.250.0.min.js' -->
-  <!-- Remove the 'strict-dynamic' keyword from the script-src directive -->
-  <!-- Remove the hash value for the image 'sha256-9xJL7qZ6jyJlMfD4yDcDvjZoQ6wJusCkDT2KsauF0kI=' -->
-  <!-- Remove the script-src-elem directive and rely on the script-src directive only -->
+
+<!-- Sure, to allow images to be loaded from `https://web-assets.youversion.com`, you can add this origin to the `img-src` directive of your Content Security Policy (CSP). Here's how you can modify your meta tag: -->
+<!-- This will allow your page to load images from both the same origin (`'self'`) and `https://web-assets.youversion.com`. -->
+
+<meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline' 'unsafe-eval' 'self' *.bible.com *.youversion.com *.youversionapi.com *.youversionapistaging.com *.branch.io *.google.com *.google-analytics.com *.sharethis.com *.share-this.com *.typekit.net *.hotjar.com app.link.com *.googletagmanager.com *.polyfill.io cdn.ravenjs.com *.googleapis.com app.link https://js-agent.newrelic.com; img-src 'self' https://web-assets.youversion.com; style-src 'self' 'unsafe-inline'; object-src 'self' https://www.bible.com;">
+
+<!--   <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline' 'unsafe-eval' 'self' *.bible.com *.youversion.com *.youversionapi.com *.youversionapistaging.com *.branch.io *.google.com *.google-analytics.com *.sharethis.com *.share-this.com *.typekit.net *.hotjar.com app.link.com *.googletagmanager.com *.polyfill.io cdn.ravenjs.com *.googleapis.com app.link https://js-agent.newrelic.com; img-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'self' https://www.bible.com;"> -->
   
   <!-- Load the New Relic JavaScript agent with the defer attribute -->
   <script src="https://js-agent.newrelic.com/nr-spa-1.250.0.min.js" defer></script>
-   </head>
+  
+   <style>
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.iframe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(50% - 5px); /* Adjust the width here */
+}
+.input-container {
+  margin-bottom: 20px;
+}
+iframe {
+  width: 100%; /* Make the iframe take up the full width of its container */
+}
+.bible-table {
+  border: 5px solid darkblue;
+  border-collapse: collapse;
+  margin: 5px 0; /* 5 pixels of padding above and below the table */
+}
+ .bible-table td, .bible-table th {
+      border: 1px solid lightblue;
+      padding: 10px;
+}
+/* CSS for the heading */
+    h1 {
+      color: darkblue;
+      font-weight: bold;
+	  text-align: center; /* This will center the heading */
+    }
+  </style>
+  </head>
+
+
 
 <body>
-<!-- Add a label element for the language drop down menu -->
-<label for="language-picker-select">Choose your language:</label>
-<!-- Add a select element with the options for the languages -->
-<select name="language-picker-select" id="language-picker-select" style="padding: 10px;" }>
-  <option value="256">Sepedi</option>
-  <option value="3499">Afrikaans</option>
-  <option value="2645">Português</option>
-  <option value="1204">English</option>
-  <option value="13">Arabic</option>
-  <option value="15">Čeština / Czech</option>
-  <option value="32">chiShona</option>
-  <option value="33">Sevenska / Swedish</option>
-  <option value="73">Deutsch</option>
-  <option value="149">Español</option>
-  <option value="106">Français</option>
-  <option value="274">Sesotho</option>
-  <option value="278">Setswana</option>
-  <option value="282">isiXhosa</option>
-  <option value="286">isiZulu</option>
-  <option value="280">Tshivenda</option>
-  <option value="328">Nederlands</option>
-  <option value="393">Kiswahili</option>
-  <option value="399">Filipino</option>
-  <option value="418">XiTsonga</option>
-  <option value="461">Noni (or Noone. Cameroon North West Province near Kumbo)</option>
-  <option value="450">isiNdebele</option>
-  <option value="472">Luvale</option>
-  <option value="526">Magyar (Hungarian)</option>
-  <option value="559">Acholi (Uganda)</option>
-  <option value="604">Siswati</option>
-  <option value="1068">Chichewa</option>
-  <option value="1378">Chisena (Beira - Mozambique)</option>
-  <option value="1444">Zimba</option>
-  <option value="1810">Dholuo</option>
-  <option value="3438">Myene</option>
-  <option value="419">Bemba (Zambia)</option>
-  <option value="3368">Italiano</option>
-   <option value="2259">Ewe</option>
-   <option value="825"> Lozi</option>
-   <option value="3090"> Lunda</option>
-   <option value="948"> chiTonga</option>
-   <option value="1961"> Tumbaka</option>
-   <option value="3614"> Nsenga</option>
-   
+  <!-- Heading for the page -->
+  <h1>Southern African Bible Readings for the Catholic Mass</h1>
+
+<div class="input-container">
+  <label for="bookInput">Book:</label>
+  <select id="bookInput" name="bookInput">
+   <option value="gen">Genesis</option>
+   <option value="exo">Exodus</option>
+   <option value="lev">Leviticus</option>
+  <option value="num">Numbers</option>
+  <option value="deu">Deuteronomy</option>
+  <option value="jos">Joshua</option>
+  <option value="jdg">Judges</option>
+  <option value="rut">Ruth</option>
+  <option value="1sa">1 Samuel</option>
+  <option value="2sa">2 Samuel</option>
+  <option value="1ki">1 Kings</option>
+  <option value="2ki">2 Kings</option>
+  <option value="1ch">1 Chronicles</option>
+  <option value="2ch">2 Chronicles</option>
+  <option value="ezr">Ezra</option>
+  <option value="neh">Nehemiah</option>
+  <option value="est">Esther</option>
+  <option value="job">Job</option>
+  <option value="psa">Psalm</option>
+  <option value="pro">Proverbs</option>
+  <option value="ecc">Ecclesiastes</option>
+  <option value="sng">Song of Solomon</option>
+  <option value="isa">Isaiah</option>
+  <option value="jer">Jeremiah</option>
+  <option value="lam">Lamentations</option>
+  <option value="ezk">Ezekiel</option>
+  <option value="dan">Daniel</option>
+  <option value="hos">Hosea</option>
+  <option value="jol">Joel</option>
+  <option value="amo">Amos</option>
+  <option value="oba">Obadiah</option>
+  <option value="jon">Jonah</option>
+  <option value="mic">Micah</option>
+  <option value="nam">Nahum</option>
+  <option value="hab">Habakkuk</option>
+  <option value="zep">Zephaniah</option>
+  <option value="hag">Haggai</option>
+  <option value="zec">Zechariah</option>
+  <option value="mal">Malachi</option>
+  <option value="tob">Tobit</option>
+  <option value="jdt">Judith</option>
+  <option value="esg">Esther (Greek)</option>
+  <option value="wis">Wisdom</option>
+  <option value="sir">Sirach</option>
+  <option value="bar">Baruch</option>
+  <option value="1ma">1 Maccabees</option>
+  <option value="2ma">2 Maccabees</option>
+  <option value="1es">1 Esdras</option>
+  <option value="2es">2 Esdras</option>
+  <option value="man">Prayer of Manasses</option>
+  <option value="3ma">3 Maccabees</option>
+  <option value="4ma">4 Maccabees</option>
+  <option value="ps2">Psalm 151</option>
+  <option value="dag">Daniel (Greek)</option>
+  <option value="mat">Matthew</option>
+  <option value="mrk">Mark</option>
+  <option value="luk">Luke</option>
+  <option value="jhn">John</option>
+  <option value="act">Acts</option>
+  <option value="rom">Romans</option>
+  <option value="1co">1 Corinthians</option>
+  <option value="2co">2 Corinthians</option>
+  <option value="gal">Galatians</option>
+  <option value="eph">Ephesians</option>
+  <option value="php">Philippians</option>
+  <option value="col">Colossians</option>
+  <option value="1th">1 Thessalonians</option>
+  <option value="2th">2 Thessalonians</option>
+  <option value="1ti">1 Timothy</option>
+  <option value="2ti">2 Timothy</option>
+  <option value="tit">Titus</option>
+  <option value="phm">Philemon</option>
+  <option value="heb">Hebrews</option>
+  <option value="jas">James</option>
+  <option value="1pe">1 Peter</option>
+  <option value="2pe">2 Peter</option>
+  <option value="1jn">1 John</option>
+  <option value="2jn">2 John</option>
+  <option value="3jn">3 John</option>
+  <option value="jud">Jude</option>
+  <option value="rev"> Revelations</option>
+		<!-- Add the rest of the books here -->
   </select>
+  <label for="chapter-input">Chapter:</label>
+  <input type="text" id="chapterInput" name="chapterInput" value="3">
+  <label for="verseInput">Verse:</label>
+  <input type="text" id="verseInput" name="verseInput" value="16">
+</div>
 
 <!-- HTML TABLE 2024 Feb Week 3 -->
+<div class="bible-table">
 <table id="bible-table">
+  <table id="bible-table">
   <tr>
     <td></td>
     <td>1</td>
@@ -79,6 +166,19 @@
     <td>8</td>
     <td>9</td>
     <td>10</td>
+  </tr>
+   <tr>
+    <td>Old Testament in the car</td>
+    <td>2ki.11.1-15</td>
+    <td>2ki.12.1-15</td>
+    <td>2ki.13.1-15</td>
+    <td>2ki.14.1-15</td>
+    <td>2ki.15.1-15</td>
+    <td>2ki.16.1-15</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
     <td>Sunday February 18, First Sunday of Lent</td>
@@ -185,96 +285,196 @@
     <td>rom.8.31-34</td>
     <td>mrk.9.2-10</td>
   </tr>
-</table>
+ </table>
+</div>
 
+<div class="container">
+  <div class="iframe-container">
+    <label for="language-picker-select1">Choose your language for iframe 1:</label>
+    <select name="language-picker-select1" id="language-picker-select1" style="padding: 10px;">
+      <!-- Language options will be added by JavaScript -->
+    </select>
+    <iframe id="iframe1" name="my-iframe1" width="400" height="300" allow-forms allow-scripts cookie="same-site=None; Secure"></iframe>
+  </div>
   
-<!-- IFRAME ELEMENT -->
-<!-- Add a cookie attribute to the iframe element -->
-<iframe id="iframe" name="my-iframe" width="400" height="300" allow-forms allow-scripts cookie="same-site=None; Secure"></iframe>
-
-<!-- JAVASCRIPT CODE -->
+  <div class="iframe-container">
+    <label for="language-picker-select2">Choose your language for iframe 2:</label>
+    <select name="language-picker-select2" id="language-picker-select2" style="padding: 10px;">
+      <!-- Language options will be added by JavaScript -->
+    </select>
+    <iframe id="iframe2" name="my-iframe2" width="400" height="300" allow-forms allow-scripts cookie="same-site=None; Secure"></iframe>
+  </div>
+</div>
+</body>
 <script>
-// Declare global variables
-let ref = "PSA.23.1-6";
-// let lang_code = "1204";
-const iframe = document.getElementById("iframe");
+window.onload = function() { 
+  // Your JavaScript code here
+    // Declare global variables
+    let ref = "PSA.23.1-6";
+    const iframe1 = document.getElementById("iframe1");
+    const iframe2 = document.getElementById("iframe2");
 
-// Get the reference to the select element by its id
-const select = document.getElementById("language-picker-select");
-// Get the value of the selected option
-let lang_code = select.value;
+/// An array of languages
+  const languages = [
+  { value: "2645", text: "Angola Português" },
+  { value: "461", text: "Cameroon North West Province near Kumbo Noni / Noone. )" },
+  { value: "15", text: "Czech Republic Čeština / " },
+  { value: "106", text: "France Français" },
+  { value: "3438", text: "Gabon Myene" },
+  { value: "73", text: "Germany Deutsch" },
+  { value: "2259", text: "Ghana Ewe" },
+  { value: "526", text: "Hungary Magyar " },
+  { value: "3368", text: "Italy Italiano" },
+  { value: "1810", text: "Kenya Dholuo" },
+  { value: "1068", text: "Malawi Chichewa" },
+  { value: "1378", text: "Mozambique Beira" },
+  { value: "1444", text: "Mozambique Zimba" },
+  { value: "328", text: "Netherlands Nederlands" },
+  { value: "399", text: "Phillipines Filipino" },
+  { value: "13", text: "Saudi Arabia Arabic" },
+  { value: "3499", text: "South Africa Afrikaans" },
+  { value: "1204", text: "South Africa English" },
+  { value: "450", text: "South Africa isiNdebele" },
+  { value: "604", text: "South Africa Siswati" },
+  { value: "282", text: "South Africa isiXhosa" },
+  { value: "286", text: "South Africa isiZulu" },
+  { value: "256", text: "South Africa Sepedi" },
+  { value: "274", text: "South Africa Sesotho" },
+  { value: "278", text: "South Africa Setswana" },
+  { value: "418", text: "South Africa XiTsonga" },
+  { value: "280", text: "South Africa Tshivenda" },
+  { value: "149", text: "Spain Español" },
+  { value: "33", text: "Sweden Sevenska" },
+  { value: "393", text: "Tanzania Kiswahili" },
+  { value: "2259", text: "Togo Ewe" },
+  { value: "559", text: "Uganda Acholi " },
+  { value: "825", text: "Zambia Lozi" },
+  { value: "472", text: "Zambia Luvale" },
+  { value: "3090", text: "Zambia Lunda" },
+  { value: "3614", text: "Zambia Nsenga" },
+  { value: "419", text: "Zambia Bemba" },
+  { value: "948", text: "Zambia chiTonga" },
+  { value: "1961", text: "Zambia Tumbaka" },
+  { value: "32", text: "Zimbabwe chiShona" },
+];
+  // Get the select elements
+  const select1 = document.getElementById("language-picker-select1");
+  const select2 = document.getElementById("language-picker-select2");
 
-// Click event listener for table cells
-document.querySelectorAll("#bible-table td").forEach(cell => {
-  cell.addEventListener("click", function () {
-    ref = cell.innerText;
-    // Use the fetch API instead of setting the iframe src attribute
-    // Pass the mode: "cors" option to the fetch function
-    // Add the "Origin" header to the request
-    lang_code = document.getElementById("language-picker-select").value;
-	// Include CORS : `https://cors-anywhere.herokuapp.com/`
-	const url = `https://cors-anywhere.herokuapp.com/`+`https://www.bible.com/bible/${lang_code}/${ref}`;
-	console.log("Passage Selector")
-    console.log("reference: " , ref);
-    console.log("language code: " , lang_code);
-    console.log(url);
-    fetch(url, {
-      mode: "cors",
-      headers: {
-        "Origin": "https://example.com"
-      }
-    })
-    .then(response => response.text())
-    .then(data => {
-      // Set the iframe content to the data
-      iframe.contentWindow.document.open();
-      iframe.contentWindow.document.write(data);
-      iframe.contentWindow.document.close();
-    })
-    // Handle the possible rejections of the fetch promise
-    .catch(error => {
-      // Handle the error
-      console.error(error);
-      // Display a message to the user
-      alert("Sorry, something went wrong. Please try again later.");
+  // A function that adds the language options to a select element
+  function addLanguageOptions(select) {
+    languages.forEach(language => {
+      const option = document.createElement("option");
+      option.value = language.value;
+      option.text = language.text;
+      select.appendChild(option);
     });
-  });
-});
+  }
 
-// Event listener for language picker select
-document.getElementById("language-picker-select").addEventListener("change", function() {
-  lang_code = this.value;
-  // Use the fetch API instead of setting the iframe src attribute
-  // Pass the mode: "cors" option to the fetch function
-  // Add the "Origin" header to the request
- // Include CORS : `https://cors-anywhere.herokuapp.com/`
-  const url = `https://cors-anywhere.herokuapp.com/`+`https://www.bible.com/bible/${lang_code}/${ref}`;
-  console.log("language picker")
-  console.log("reference: " , ref);
-  console.log("language code: " , lang_code);
-  console.log(url);
-  fetch(url, {
-    mode: "cors",
-    headers: {
-      "Origin": "https://example.com"
+  // Add the language options to the select elements
+  addLanguageOptions(select1);
+  addLanguageOptions(select2);
+  	   
+
+// Add event listeners to the input elements and the select elements to call updateBiblicalText when changed
+bookInput.addEventListener("change", function() {
+  ref = `${bookInput.value}.${chapterInput.value}.${verseInput.value}`;
+  updateBiblicalText();
+});
+chapterInput.addEventListener("change", function() {
+  ref = `${bookInput.value}.${chapterInput.value}.${verseInput.value}`;
+  updateBiblicalText();
+});
+verseInput.addEventListener("change", function() {
+  ref = `${bookInput.value}.${chapterInput.value}.${verseInput.value}`;
+  updateBiblicalText();
+});
+select1.addEventListener("change", updateBiblicalText);
+select2.addEventListener("change", updateBiblicalText);
+
+     // Click event listener for table cells
+    document.querySelectorAll("#bible-table td").forEach(cell => {
+      cell.addEventListener("click", function () {
+        ref = cell.innerText;
+        updateBiblicalText();
+      });
+    });
+
+	function updateBiblicalText() {
+  // Parse the ref variable into book, chapter, and verse
+  console.log("ref : ", ref)
+  const [book, chapter, ...verses]  = ref.split(".");
+  const verse = verses.join('.');
+
+  // Get the value of the selected language options
+  const lang_code1 = select1.value;
+  const lang_code2 = select2.value;
+
+  // Construct the URLs for the biblical text
+  const url1 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
+  const url2 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+	console.log(book,chapter,verse)
+      console.log("Passage Selector")
+      console.log("language code1: " , lang_code1);
+	  console.log("language code2: " , lang_code2);
+      console.log("url1: " ,url1);
+	  console.log("url2: " ,url2);
+  // Fetch and display the biblical text for iframe 1
+  fetchBiblicalText(url1, iframe1);
+
+  // Fetch and display the biblical text for iframe 2
+  fetchBiblicalText(url2, iframe2);
+}
+
+
+    <!-- function updateBiblicalText() {
+      // Get the current values of the book, chapter, and verse input fields
+      const book = bookInput.value;
+      const chapter = chapterInput.value;
+      const verse = verseInput.value;
+
+      // Get the value of the selected language options
+      const lang_code1 = select1.value;
+      const lang_code2 = select2.value;
+
+      // Construct the URLs for the biblical text
+      const url1 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
+      const url2 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+	  console.log(book,chapter,verse)
+      console.log("Passage Selector")
+      console.log("language code1: " , lang_code1);
+	  console.log("language code2: " , lang_code2);
+      console.log("url1: " ,url1);
+	  console.log("url2: " ,url2);
+      // Fetch and display the biblical text for iframe 1
+      fetchBiblicalText(url1, iframe1);
+
+      // Fetch and display the biblical text for iframe 2
+      fetchBiblicalText(url2, iframe2);
+     -->
+
+    function fetchBiblicalText(url, iframe) {
+      fetch(url, {
+        mode: "cors",
+        headers: {
+          "Origin": "https://example.com"
+        }
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Set the iframe content to the data
+        iframe.contentWindow.document.open();
+        iframe.contentWindow.document.write(data);
+        iframe.contentWindow.document.close();
+      })
+      .catch(error => {
+        // Handle the error
+        console.error(error);
+        // Display a message to the user
+        alert("Sorry, something went wrong. Please try again later.");
+      });
     }
-  })
-  .then(response => response.text())
-  .then(data => {
-    // Set the iframe content to the data
-    iframe.contentWindow.document.open();
-    iframe.contentWindow.document.write(data);
-    iframe.contentWindow.document.close();
-  })
-  // Handle the possible rejections of the fetch promise
-  .catch(error => {
-    // Handle the error
-    console.error(error);
-    // Display a message to the user
-    alert("Sorry, something went wrong. Please try again later.");
-  });
-});
-</script>
-
+	};
+  </script>
 </body>
 </html>
