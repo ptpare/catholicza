@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -150,10 +150,11 @@ iframe {
   <input type="text" id="verseInput" name="verseInput" value="16">
 </div>
 
+<iframe src="https://ptpare.github.io/catholicza" width="100%" height="500">
 <!-- HTML TABLE 2024 Feb Week 4 -->
 <div class="bible-table">
 <table id="bible-table">
-    <tr>
+  <tr>
     <td></td>
     <td>1</td>
     <td>2</td>
@@ -187,16 +188,16 @@ iframe {
     <td>Psa.79.9</td>
     <td>Psa.79.11</td>
     <td>Psa.79.13</td>
-    <td>Jn 6.63</td>
-    <td>Jn 6.68</td>
-    <td>Lk 6.36-38</td>
+    <td>Jhn.6.63</td>
+    <td>Jhn.6.68</td>
+    <td>Luk.6.36-38</td>
     <td></td>
     <td></td>
   </tr>
   <tr>
     <td>Tuesday, February 27</td>
-    <td>Is 1.10</td>
-    <td>Is 1.16-20</td>
+    <td>Isa.1.10</td>
+    <td>Isa.1.16-20</td>
     <td>Psa.50.8-9</td>
     <td>Psa.50.16-17</td>
     <td>Psa.50.21</td>
@@ -212,8 +213,8 @@ iframe {
     <td>Psa.31.5-6</td>
     <td>Psa.31.14</td>
     <td>Psa.31.15-16</td>
-    <td>Jn 6.63</td>
-    <td>Jn 6.68</td>
+    <td>Jhn.6.63</td>
+    <td>Jhn.6.68</td>
     <td>Mat.20.17-28</td>
     <td></td>
     <td></td>
@@ -226,8 +227,8 @@ iframe {
     <td>Psa.1.3</td>
     <td>Psa.1.4</td>
     <td>Psa.1.6</td>
-    <td>Lk 15.18</td>
-    <td>Lk 16.19-31</td>
+    <td>Luk.15.18</td>
+    <td>Luk.16.19-31</td>
     <td></td>
     <td></td>
     <td></td>
@@ -240,39 +241,40 @@ iframe {
     <td>Psa.105.16-17</td>
     <td>Psa.105.18-19</td>
     <td>Psa.105.20-21</td>
-    <td>Jn 3.16</td>
+    <td>Jhn.3.16</td>
     <td>Mat.21.33-43</td>
     <td>Mat.21.45-46</td>
     <td></td>
   </tr>
   <tr>
     <td>Saturday, March 2</td>
-    <td>Mi 7.14-15</td>
-    <td>Mi 7.18-20</td>
+    <td>Mic.7.14-15</td>
+    <td>Mic.7.18-20</td>
     <td>Psa.103.1-2</td>
     <td>Psa.103.3-4</td>
     <td>Psa.103.9-10</td>
     <td>Psa.103.11-12</td>
-    <td>Lk 15.18</td>
-    <td>Lk 15.1-3</td>
-    <td>Lk 15.11-32</td>
+    <td>Luk.15.18</td>
+    <td>Luk.15.1-3</td>
+    <td>Luk.15.11-32</td>
     <td></td>
   </tr>
   <tr>
     <td>Sunday, March 3, Third Sunday of Lent</td>
-    <td>Ex 20.1-17</td>
+    <td>Exo.20.1-17</td>
     <td>Psa.19.8</td>
     <td>Psa.19.9</td>
     <td>Psa.19.10</td>
     <td>Psa.19.11</td>
     <td>1Co.1.22-25</td>
-    <td>Jn 3.16</td>
-    <td>Jn 2.13-25</td>
+    <td>Jhn.3.16</td>
+    <td>Jhn.2.13-25</td>
     <td></td>
     <td></td>
   </tr>
 </table>
 </div>
+</iframe>
 
 <div class="container">
   <div class="iframe-container">
@@ -305,6 +307,8 @@ window.onload = function() {
   { value: "2645", text: "Angola Português" },
   { value: "461", text: "Cameroon North West Province near Kumbo Noni / Noone. )" },
   { value: "15", text: "Czech Republic Čeština / " },
+  { value: "2921", text: "DRC: SwahiliFrançais" },
+  { value: "1964", text: "DRC: Lingala" },
   { value: "106", text: "France Français" },
   { value: "3438", text: "Gabon Myene" },
   { value: "73", text: "Germany Deutsch" },
@@ -360,7 +364,10 @@ window.onload = function() {
   // Add the language options to the select elements
   addLanguageOptions(select1);
   addLanguageOptions(select2);
-  	   
+  	     
+ // Set the default languages
+  select1.value = "1204"; // South Africa English
+  select2.value = "256"; // South Africa Sepedi
 
 // Add event listeners to the input elements and the select elements to call updateBiblicalText when changed
 bookInput.addEventListener("change", function() {
