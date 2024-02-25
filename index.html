@@ -303,7 +303,8 @@ window.onload = function() {
     let ref = "PSA.23.1-6";
     const iframe1 = document.getElementById("iframe1");
     const iframe2 = document.getElementById("iframe2");
-
+    
+		
 /// An array of languages
   const languages = [
   { value: "2645", text: "Angola Português" },
@@ -433,8 +434,12 @@ select2.addEventListener("change", updateBiblicalText);
       const lang_code2 = select2.value;
 
       // Construct the URLs for the biblical text
-      const url1 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
-      const url2 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+      //const url1 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
+      //const url2 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+	  const url1 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
+	  const url2 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+	  
+	  
 	  console.log(book,chapter,verse)
       console.log("Passage Selector")
       console.log("language code1: " , lang_code1);
@@ -468,8 +473,8 @@ select2.addEventListener("change", updateBiblicalText);
         // Display a message to the user
         alert("Sorry, something went wrong. Please try again later.");
       });
-    }
+    };
 	};
-  </script>
+	  </script>
 </body>
 </html>
