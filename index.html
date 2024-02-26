@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Southern African Bible Readings for the Catholic Mass</title>
+  <title>Southern African Bible Readings for the Catholic Mass (Monday 14:57)</title>
  
   <!-- Move the meta tag with the CSP directive inside the head section -->
 
@@ -407,11 +407,12 @@ select2.addEventListener("change", updateBiblicalText);
   const lang_code2 = select2.value;
 
   // Construct the URLs for the biblical text
-  const url1 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
-  const url2 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+	const url1 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
+	const url2 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+  
 	console.log(book,chapter,verse)
       console.log("Passage Selector")
-      console.log("language code1: " , lang_code1);
+      console.log("language code1: " , lang_code1);cmd
 	  console.log("language code2: " , lang_code2);
       console.log("url1: " ,url1);
 	  console.log("url2: " ,url2);
