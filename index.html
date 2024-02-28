@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Monday 15H27 Southern African Bible Readings for the Catholic Mass</title>
+  <title>(Title) Wednesday 11H41 Southern African Bible Readings for the Catholic Mass</title>
  
   <!-- Move the meta tag with the CSP directive inside the head section -->
 
@@ -59,7 +59,7 @@ iframe {
 
 <body>
   <!-- Heading for the page -->
-  <h1>Monday 21H08 Southern African Bible Readings for the Catholic Mass</h1>
+  <h1>(H1 Wednesday 11H41) Southern African Bible Readings for the Catholic Mass</h1>
 
 <div class="input-container">
   <label for="bookInput">Book:</label>
@@ -422,37 +422,6 @@ select2.addEventListener("change", updateBiblicalText);
   // Fetch and display the biblical text for iframe 2
   fetchBiblicalText(url2, iframe2);
 }
-
-
-    <!-- function updateBiblicalText() {
-      // Get the current values of the book, chapter, and verse input fields
-      const book = bookInput.value;
-      const chapter = chapterInput.value;
-      const verse = verseInput.value;
-
-      // Get the value of the selected language options
-      const lang_code1 = select1.value;
-      const lang_code2 = select2.value;
-
-      // Construct the URLs for the biblical text
-      //const url1 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
-      //const url2 = `https://cors-anywhere.herokuapp.com/https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
-	  const url1 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
-	  const url2 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
-	  
-	  
-	  console.log(book,chapter,verse)
-      console.log("Passage Selector")
-      console.log("language code1: " , lang_code1);
-	  console.log("language code2: " , lang_code2);
-      console.log("url1: " ,url1);
-	  console.log("url2: " ,url2);
-      // Fetch and display the biblical text for iframe 1
-      fetchBiblicalText(url1, iframe1);
-
-      // Fetch and display the biblical text for iframe 2
-      fetchBiblicalText(url2, iframe2);
-     -->
 
     function fetchBiblicalText(url, iframe) {
       fetch(url, {
