@@ -407,8 +407,8 @@ select2.addEventListener("change", updateBiblicalText);
   const lang_code2 = select2.value;
 
   // Construct the URLs for the biblical text
-	const url1 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
-	const url2 = `http://localhost:3000/proxy?url=https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
+	const url1 = `http://localhost:3001/proxy?url=https://www.bible.com/bible/${lang_code1}/${book}.${chapter}.${verse}`;
+	const url2 = `http://localhost:3001/proxy?url=https://www.bible.com/bible/${lang_code2}/${book}.${chapter}.${verse}`;
   
 	console.log(book,chapter,verse)
       console.log("Passage Selector")
