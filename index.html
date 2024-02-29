@@ -280,7 +280,7 @@ iframe {
 
 <div class="container">
   <div class="iframe-container">
-    <label for="language-picker-select1">Choose your language for iframe 1:</label>
+    <label for="language-picker-select1">Choose your language for the first window:</label>
     <select name="language-picker-select1" id="language-picker-select1" style="padding: 10px;">
       <!-- Language options will be added by JavaScript -->
     </select>
@@ -288,7 +288,7 @@ iframe {
   </div>
   
   <div class="iframe-container">
-    <label for="language-picker-select2">Choose your language for iframe 2:</label>
+    <label for="language-picker-select2">Choose your language for the second window:</label>
     <select name="language-picker-select2" id="language-picker-select2" style="padding: 10px;">
       <!-- Language options will be added by JavaScript -->
     </select>
@@ -328,27 +328,28 @@ window.onload = function() {
   { value: "3499", text: "South Africa Afrikaans" },
   { value: "1204", text: "South Africa English" },
   { value: "450", text: "South Africa isiNdebele" },
-  { value: "604", text: "South Africa Siswati" },
-  { value: "282", text: "South Africa isiXhosa" },
-  { value: "286", text: "South Africa isiZulu" },
-  { value: "256", text: "South Africa Sepedi" },
-  { value: "274", text: "South Africa Sesotho" },
-  { value: "278", text: "South Africa Setswana" },
-  { value: "607", text: "South Africa XiTsonga" },
-  { value: "280", text: "South Africa Tshivenda" },
-  { value: "149", text: "Spain Español" },
-  { value: "33", text: "Sweden Sevenska" },
-  { value: "393", text: "Tanzania Kiswahili" },
-  { value: "2259", text: "Togo Ewe" },
-  { value: "559", text: "Uganda Acholi " },
-  { value: "825", text: "Zambia Lozi" },
-  { value: "472", text: "Zambia Luvale" },
-  { value: "3090", text: "Zambia Lunda" },
-  { value: "3614", text: "Zambia Nsenga" },
-  { value: "419", text: "Zambia Bemba" },
-  { value: "948", text: "Zambia chiTonga" },
-  { value: "1961", text: "Zambia Tumbaka" },
-  { value: "32", text: "Zimbabwe chiShona" },
+  { value: "604", text: "South Africa: Siswati" },
+  { value: "282", text: "South Africa: isiXhosa" },
+  { value: "286", text: "South Africa: isiZulu" },
+  { value: "256", text: "South Africa: Sepedi" },
+  { value: "274", text: "South Africa: Sesotho" },
+  { value: "278", text: "South Africa: Setswana" },
+  { value: "607", text: "South Africa: XiTsonga" },
+  { value: "280", text: "South Africa: Tshivenda" },
+  { value: "149", text: "Spain: Español" },
+  { value: "33", text: "Sweden: Sevenska" },
+  { value: "393", text: "Tanzania: Kiswahili" },
+  { value: "2259", text: "Togo: Ewe" },
+  { value: "559", text: "Uganda: Acholi " },
+  { value: "2182", text: "Uganda: Luganda " },
+  { value: "825", text: "Zambia: Lozi" },
+  { value: "472", text: "Zambia: Luvale" },
+  { value: "3090", text: "Zambia: Lunda" },
+  { value: "3614", text: "Zambia: Nsenga" },
+  { value: "419", text: "Zambia: Bemba" },
+  { value: "948", text: "Zambia: chiTonga" },
+  { value: "1961", text: "Zambia: Tumbaka" },
+  { value: "32", text: "Zimbabwe: chiShona" },
 ];
   // Get the select elements
   const select1 = document.getElementById("language-picker-select1");
